@@ -51,7 +51,7 @@ export default function DigitalProjectsSection() {
                     <h2 className="text-section text-primary-dark mb-6">
                         Projetos Digitais
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                         Nosso app oferece suporte a pessoas que enfrentam adicção, combinando inteligência artificial treinada com conteúdos educativos, ferramentas de reflexão e dicas de autocuidado. Também orienta e encaminha para redes de apoio e serviços especializados, promovendo autonomia, resiliência e transformação pessoal de forma segura e acessível.
                     </p>
                 </div>
@@ -65,7 +65,7 @@ export default function DigitalProjectsSection() {
                                     <img
                                         src={appPreview}
                                         alt="Preview do aplicativo Vozes Fortes"
-                                        className="max-w-xs mx-auto rounded-2xl shadow-glow"
+                                        className="max-w-lg mx-auto rounded-2xl shadow-glow"
                                     />
                                     <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
                                         Em Breve
@@ -97,7 +97,7 @@ export default function DigitalProjectsSection() {
                                             <h4 className="text-lg font-semibold text-primary-dark mb-2">
                                                 {feature.title}
                                             </h4>
-                                            <p className="text-muted-foreground leading-relaxed">
+                                            <p className="text-lg text-muted-foreground leading-relaxed">
                                                 {feature.description}
                                             </p>
                                         </div>
@@ -114,7 +114,7 @@ export default function DigitalProjectsSection() {
                                     Seja o Primeiro a Saber
                                 </h4>
                             </div>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                                 Cadastre seu e-mail e receba notificações exclusivas sobre o lançamento
                                 do aplicativo e novidades do Instituto Vozes Fortes.
                             </p>

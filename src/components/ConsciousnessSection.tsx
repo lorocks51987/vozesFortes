@@ -24,19 +24,19 @@ export default function ConsciousnessSection() {
         <section id="da-pele-para-dentro" className="py-20 bg-gradient-hero text-primary-foreground">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <div className="relative mb-6 flex items-center justify-center h-52 md:h-64">
-                        <h2 className="text-section whitespace-nowrap">Da Pele para Dentro</h2>
+                    <div className="relative mb-0 flex items-center justify-center h-52 md:h-64">
+                        <h2 className="text-6xl md:text-7xl font-bold whitespace-nowrap">Da Pele para Dentro</h2>
                         <img
                             src={peleLogo}
                             alt="Logo Da Pele para Dentro"
-                            className="absolute -left-6 md:-left-24 bottom-0 w-80 h-80 object-contain pointer-events-none select-none"
+                            className="absolute -left-10 md:-left-32 bottom-0 w-64 h-64 md:w-72 md:h-72 translate-y-2 md:translate-y-4 object-contain pointer-events-none select-none"
                         />
                     </div>
-                    <div className="w-24 h-1 bg-primary-foreground mx-auto mb-8 rounded-full" />
-                    <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90">
+                    <div className="w-24 h-1 bg-primary-foreground mx-auto mb-0 rounded-full" />
+                    <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
                         Da Pele para Dentro nasceu com a missão de promover reflexão e conscientização sobre a dependência química, que muitas vezes se disfarça em outras doenças e é tratado com preconceito e julgamento. A proposta é olhar além do que aparece na superfície — para além da pele — e enxergar a realidade interna de cada ser humano. É falar de dor, mas também de esperança. É dar voz a quem sofre em silêncio e trazer informação, acolhimento e caminhos de recuperação. Fortalecer a escuta e o diálogo, criando um espaço seguro de partilha e aprendizado.
                     </p>
-                    <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90 mt-6">
+                    <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90 mt-3">
                         A ação se desenvolve através de: Escuta ativa em grupo (terapia), fundamentada no método Minnesota; Rodas de conversa, que favorecem o acolhimento e a troca de experiências; Palestras, com o objetivo de comunicar, informar e conscientizar sobre questões emocionais, sociais e de dependência química.
                     </p>
                 </div>

@@ -1,5 +1,6 @@
 import heroBackground from "@/assets/banner.png";
 import logo from "@/assets/logo.png";
+import escritaImg from "@/assets/escrita.png";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
@@ -15,7 +16,7 @@ export default function HeroSection() {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${heroBackground})` }}
             />
-            <div className="absolute inset-0 bg-gradient-hero opacity-60" />
+            <div className="absolute inset-0 bg-gradient-hero opacity-75" />
 
             {/* Content */}
             <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
@@ -32,9 +33,13 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main Title */}
-                <h1 className="text-hero text-primary-foreground mb-6 animate-fade-in">
-                    Vozes Fortes
-                </h1>
+                <div className="mb-6 animate-fade-in flex justify-center">
+                    <img
+                        src={escritaImg}
+                        alt="Vozes Fortes"
+                        className="max-w-xl md:max-w-2xl h-auto"
+                    />
+                </div>
 
                 {/* Subtitle */}
                 <p className="text-subsection text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
