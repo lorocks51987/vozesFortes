@@ -1,6 +1,6 @@
 import heroBackground from "@/assets/banner.png";
-import logo from "@/assets/logo.png";
 import escritaImg from "@/assets/escrita.png";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
@@ -42,12 +42,12 @@ export default function HeroSection() {
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-subsection text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-primary-foreground mb-8 max-w-2xl mx-auto leading-8">
                     Damos Espaço à Sua Voz
                 </p>
 
                 {/* Description */}
-                <p className="text-lg text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base md:text-lg text-primary-foreground mb-12 max-w-2xl mx-auto leading-8">
                     O Instituto Vozes Fortes dedica-se a dar voz a quem luta contra dependência química e codependência,
                     promovendo educação, conscientização e transformação através de projetos que inspiram esperança e renovação.
                 </p>

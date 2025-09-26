@@ -32,7 +32,7 @@ export default function ConsciousnessSection() {
                             className="absolute -left-10 md:-left-32 bottom-0 w-64 h-64 md:w-72 md:h-72 translate-y-2 md:translate-y-4 object-contain pointer-events-none select-none"
                         />
                     </div>
-                    <div className="w-24 h-1 bg-primary-foreground mx-auto mb-0 rounded-full" />
+                    <div className="w-24 h-1 bg-primary-foreground mx-auto -mt-4 md:-mt-6 mb-6 md:mb-8 rounded-full" />
                     <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
                         Da Pele para Dentro nasceu com a missão de promover reflexão e conscientização sobre a dependência química, que muitas vezes se disfarça em outras doenças e é tratado com preconceito e julgamento. A proposta é olhar além do que aparece na superfície — para além da pele — e enxergar a realidade interna de cada ser humano. É falar de dor, mas também de esperança. É dar voz a quem sofre em silêncio e trazer informação, acolhimento e caminhos de recuperação. Fortalecer a escuta e o diálogo, criando um espaço seguro de partilha e aprendizado.
                     </p>

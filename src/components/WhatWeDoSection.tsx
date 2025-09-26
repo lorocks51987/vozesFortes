@@ -1,5 +1,5 @@
-import { BookOpen, Mic, Smartphone, Users } from "lucide-react";
 import espacoVozImg from "@/assets/espacoVoz.png";
+import { BookOpen, Mic, Smartphone, Users } from "lucide-react";
 
 export default function WhatWeDoSection() {
     const services = [
@@ -39,7 +39,7 @@ export default function WhatWeDoSection() {
                             className="absolute -right-6 md:-right-24 bottom-0 w-48 h-48 md:w-64 md:h-64 translate-y-6 md:translate-y-8 object-contain pointer-events-none select-none"
                         />
                     </div>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-8">
                         O Instituto Vozes Fortes nasce do compromisso em dar voz a quem luta contra a dependência química e a codependência. Nosso propósito é educar, conscientizar e formar profissionais e comunidades para lidar com um dos maiores desafios sociais e de saúde pública do nosso tempo. Fundado por Mônica Casagrande Neto – educadora, escritora, conselheira e especialista em dependência química – o projeto conecta experiência de vida, conhecimento técnico e ação social em diferentes frentes.
                     </p>
                 </div>
@@ -50,13 +50,13 @@ export default function WhatWeDoSection() {
                             key={index}
                             className="bg-gradient-card p-8 rounded-xl shadow-card hover-lift transition-smooth"
                         >
-                            <div className="mb-6">
-                                <service.icon className="w-12 h-12 text-primary mx-auto" />
+                            <div className="mb-6 flex justify-start">
+                                <service.icon className="w-10 h-10 text-primary" />
                             </div>
-                            <h3 className="text-xl font-semibold text-primary-dark mb-4 text-center">
+                            <h3 className="text-xl font-semibold text-primary-dark mb-2 text-left">
                                 {service.title}
                             </h3>
-                            <p className="text-lg text-muted-foreground text-center leading-relaxed">
+                            <p className="text-base md:text-lg text-muted-foreground text-left leading-7">
                                 {service.description}
                             </p>
                         </div>
