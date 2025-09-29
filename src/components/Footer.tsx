@@ -46,15 +46,27 @@ export default function Footer() {
                         <div className="space-y-3">
                             <div className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-primary-foreground/60" />
-                                <span className="text-primary-foreground/80 text-sm">contato@vozesfortes.org.br</span>
+                                <a
+                                    href="mailto:vozesfortes32@gmail.com"
+                                    className="text-primary-foreground/80 text-sm hover:text-primary-foreground transition-colors"
+                                >
+                                    vozesfortes32@gmail.com
+                                </a>
                             </div>
                             <div className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-primary-foreground/60" />
-                                <span className="text-primary-foreground/80 text-sm">(11) 99999-9999</span>
+                                <a
+                                    href="https://wa.me/5514998540110"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary-foreground/80 text-sm hover:text-primary-foreground transition-colors"
+                                >
+                                    +55 14 99854-0110
+                                </a>
                             </div>
                             <div className="flex items-start gap-3">
                                 <MapPin className="w-4 h-4 text-primary-foreground/60 mt-1" />
-                                <span className="text-primary-foreground/80 text-sm">São Paulo, SP<br />Brasil</span>
+                                <span className="text-primary-foreground/80 text-sm">Marília, SP<br />Brasil</span>
                             </div>
                         </div>
                     </div>

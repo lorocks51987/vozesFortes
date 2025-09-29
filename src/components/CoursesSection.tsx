@@ -2,29 +2,41 @@ import { Button } from "@/components/ui/button";
 import { Award, GraduationCap, Monitor, Users } from "lucide-react";
 
 export default function CoursesSection() {
+    const phoneNumber = "5514998540110";
     const courses = [
         {
             icon: GraduationCap,
             title: "Treinamento Intensivo (8h) – Dependência Química e Prevenção",
             description: "Para profissionais da saúde, educação, assistência social e empresas.",
             duration: "8 horas",
-            format: "Presencial, Híbrido ou Online"
+            format: "Presencial, Híbrido ou Online",
+            message:
+                "Olá! Tenho interesse no Treinamento Intensivo (8h) – Dependência Química e Prevenção. Poderia me enviar mais informações?"
         },
         {
             icon: Users,
             title: "Capacitação de Monitores e Conselheiros",
             description: "Formação para atuação no acompanhamento e suporte a pessoas em recuperação.",
             duration: "Carga horária variável",
-            format: "Presencial ou Híbrido"
+            format: "Presencial ou Híbrido",
+            message:
+                "Olá! Tenho interesse na Capacitação de Monitores e Conselheiros. Poderia me enviar detalhes e valores?"
         },
         {
             icon: Monitor,
             title: "Workshops Corporativos",
             description: "Álcool, drogas e saúde mental no trabalho, com foco em prevenção e acolhimento.",
             duration: "8–16 horas",
-            format: "Presencial ou Online"
+            format: "Presencial ou Online",
+            message:
+                "Olá! Tenho interesse nos Workshops Corporativos sobre álcool, drogas e saúde mental no trabalho. Pode compartilhar proposta e disponibilidade?"
         }
     ];
+
+    const buildWhatsAppLink = (text: string) => {
+        const encoded = encodeURIComponent(text);
+        return `https://wa.me/${phoneNumber}?text=${encoded}`;
+    };
 
     return (
         <section id="cursos-treinamentos" className="py-20 bg-background">
@@ -65,8 +77,14 @@ export default function CoursesSection() {
                                 </div>
                             </div>
 
-                            <Button variant="cta" size="lg" className="w-full">
-                                Saiba Mais
+                            <Button asChild variant="cta" size="lg" className="w-full">
+                                <a
+                                    href={buildWhatsAppLink(course.message)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Saiba Mais
+                                </a>
                             </Button>
                         </div>
                     ))}
