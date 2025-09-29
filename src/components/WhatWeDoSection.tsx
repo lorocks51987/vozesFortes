@@ -29,17 +29,17 @@ export default function WhatWeDoSection() {
         <section id="o-que-fazemos" className="py-20 bg-gradient-section">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <div className="relative mb-6 flex items-center justify-center h-32 md:h-40">
-                        <h2 className="text-section text-primary-dark">
+                    <div className="relative mb-6 flex items-center justify-center h-28 sm:h-32 md:h-40 px-4">
+                        <h2 className="text-3xl sm:text-section text-primary-dark">
                             O Que Fazemos
                         </h2>
                         <img
                             src={espacoVozImg}
                             alt="Damos Espaço à Sua Voz"
-                            className="absolute -right-6 md:-right-24 bottom-0 w-48 h-48 md:w-64 md:h-64 translate-y-6 md:translate-y-8 object-contain pointer-events-none select-none"
+                            className="absolute right-1 sm:-right-6 md:-right-24 bottom-2 sm:bottom-3 md:bottom-0 w-20 h-20 sm:w-32 sm:h-32 md:w-64 md:h-64 translate-y-0 sm:translate-y-2 md:translate-y-8 object-contain pointer-events-none select-none"
                         />
                     </div>
-                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-8">
+                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-8 px-4">
                         O Instituto Vozes Fortes nasce do compromisso em dar voz a quem luta contra a dependência química e a codependência. Nosso propósito é educar, conscientizar e formar profissionais e comunidades para lidar com um dos maiores desafios sociais e de saúde pública do nosso tempo. Fundado por Mônica Casagrande Neto – educadora, escritora, conselheira e especialista em dependência química – o projeto conecta experiência de vida, conhecimento técnico e ação social em diferentes frentes.
                     </p>
                 </div>

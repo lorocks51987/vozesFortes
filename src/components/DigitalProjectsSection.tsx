@@ -48,10 +48,10 @@ export default function DigitalProjectsSection() {
         <section id="projetos-digitais" className="py-20 bg-gradient-section">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-section text-primary-dark mb-6">
+                    <h2 className="text-3xl sm:text-section text-primary-dark mb-6">
                         Projetos Digitais
                     </h2>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
                         Nosso app oferece suporte a pessoas que enfrentam adicção, combinando inteligência artificial treinada com conteúdos educativos, ferramentas de reflexão e dicas de autocuidado. Também orienta e encaminha para redes de apoio e serviços especializados, promovendo autonomia, resiliência e transformação pessoal de forma segura e acessível.
                     </p>
                 </div>
@@ -59,13 +59,13 @@ export default function DigitalProjectsSection() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* App Preview */}
                     <div className="relative">
-                        <div className="bg-gradient-hero p-8 rounded-2xl shadow-elegant">
-                            <div className="flex justify-center mb-6">
+                        <div className="bg-gradient-hero p-8 rounded-2xl shadow-elegant overflow-hidden">
+                            <div className="flex justify-center mb-6 px-4 md:px-0">
                                 <div className="relative">
                                     <img
                                         src={appPreview}
                                         alt="Preview do aplicativo Vozes Fortes"
-                                        className="max-w-lg mx-auto rounded-2xl shadow-glow"
+                                        className="w-full max-w-full h-auto mx-auto rounded-2xl shadow-glow"
                                     />
                                     <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
                                         Em Breve
@@ -75,7 +75,7 @@ export default function DigitalProjectsSection() {
                             <h3 className="text-2xl font-semibold text-primary-foreground text-center mb-4">
                                 App Vozes Fortes
                             </h3>
-                            <p className="text-primary-foreground/90 text-center leading-relaxed">
+                            <p className="text-primary-foreground/90 text-center leading-relaxed px-4 md:px-0">
                                 Seu companheiro digital na jornada de recuperação e crescimento pessoal.
                             </p>
                         </div>
@@ -114,7 +114,7 @@ export default function DigitalProjectsSection() {
                                     Seja o Primeiro a Saber
                                 </h4>
                             </div>
-                            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
                                 Cadastre seu e-mail e receba notificações exclusivas sobre o lançamento
                                 do aplicativo e novidades do Instituto Vozes Fortes.
                             </p>

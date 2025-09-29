@@ -10,7 +10,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -19,8 +19,8 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-hero opacity-75" />
 
             {/* Content */}
-            <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-                <p className="text-sm md:text-base tracking-wide uppercase text-primary-foreground/80 mb-3">
+            <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16 md:pt-0">
+                <p className="text-xs sm:text-sm md:text-base tracking-wide uppercase text-primary-foreground/80 mb-3">
                     Educação, Cultura, Comunicação, Desenvolvimento social
                 </p>
                 {/* Logo */}
@@ -28,7 +28,7 @@ export default function HeroSection() {
                     <img
                         src={logo}
                         alt="Vozes Fortes - VF Logo"
-                        className="w-36 h-36 md:w-48 md:h-48 hover-scale transition-smooth"
+                        className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 hover-scale transition-smooth"
                     />
                 </div>
 
@@ -37,26 +37,26 @@ export default function HeroSection() {
                     <img
                         src={escritaImg}
                         alt="Vozes Fortes"
-                        className="max-w-xl md:max-w-2xl h-auto"
+                        className="w-full max-w-xs sm:max-w-md md:max-w-2xl h-auto px-4"
                     />
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-lg md:text-xl text-primary-foreground mb-8 max-w-2xl mx-auto leading-8">
+                <p className="text-base sm:text-lg md:text-xl text-primary-foreground mb-8 max-w-2xl mx-auto leading-7 sm:leading-8 px-4">
                     Damos Espaço à Sua Voz
                 </p>
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-primary-foreground mb-12 max-w-2xl mx-auto leading-8">
+                <p className="text-sm sm:text-base md:text-lg text-primary-foreground mb-12 max-w-2xl mx-auto leading-7 sm:leading-8 px-4">
                     O Instituto Vozes Fortes dedica-se a dar voz a quem luta contra dependência química e codependência,
                     promovendo educação, conscientização e transformação através de projetos que inspiram esperança e renovação.
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
                     <Button
                         variant="hero"
-                        size="xl"
+                        size="lg"
                         onClick={() => scrollToSection('o-que-fazemos')}
                         className="transition-bounce"
                     >
@@ -64,7 +64,7 @@ export default function HeroSection() {
                     </Button>
                     <Button
                         variant="outline-hero"
-                        size="xl"
+                        size="lg"
                         onClick={() => scrollToSection('monica-casagrande')}
                         className="transition-bounce text-primary-foreground border-primary-foreground bg-black/30 hover:bg-black/40 backdrop-blur-sm font-semibold shadow-lg"
                     >
@@ -74,7 +74,7 @@ export default function HeroSection() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-2 sm:bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 pointer-events-none">
                 <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
                     <div className="w-1 h-3 bg-primary-foreground/80 rounded-full mt-2 animate-pulse" />
                 </div>

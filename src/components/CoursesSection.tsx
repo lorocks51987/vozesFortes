@@ -45,16 +45,16 @@ export default function CoursesSection() {
                     <h2 className="text-section text-primary-dark mb-6">
                         Cursos e Treinamentos
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
                         Formação & Cursos. Modalidades: presencial, híbrido e online. Certificação: Instituto Vozes Fortes.
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 mb-12">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 px-4 md:px-0">
                     {courses.map((course, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-card p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border"
+                            className="bg-gradient-card p-6 sm:p-7 md:p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border"
                         >
                             <div className="mb-6">
                                 <course.icon className="w-12 h-12 text-primary mx-auto" />

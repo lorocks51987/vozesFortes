@@ -6,14 +6,14 @@ export default function Footer() {
 
     return (
         <footer className="bg-gradient-hero text-primary-foreground">
-            <div className="container mx-auto px-4 py-16">
-                <div className="grid lg:grid-cols-4 gap-8">
+            <div className="container mx-auto px-4 py-12 sm:py-16">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-4 mb-6">
-                            <img src={logo} alt="Vozes Fortes" className="w-24 h-24 object-cover rounded" />
+                            <img src={logo} alt="Vozes Fortes" className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded" />
                             <div>
-                                <h3 className="text-2xl font-bold">Vozes Fortes</h3>
+                                <h3 className="text-xl sm:text-2xl font-bold">Vozes Fortes</h3>
                                 <p className="text-primary-foreground/80">Instituto de Transformação</p>
                             </div>
                         </div>
@@ -72,12 +72,12 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-primary-foreground/20 mt-12 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-primary-foreground/60 text-sm">
+                <div className="border-t border-primary-foreground/20 mt-10 sm:mt-12 pt-6 sm:pt-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+                        <p className="text-primary-foreground/60 text-xs sm:text-sm text-center">
                             © {currentYear} Instituto Vozes Fortes. Todos os direitos reservados.
                         </p>
-                        <div className="flex gap-6 text-sm">
+                        <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
                             <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                                 Política de Privacidade
                             </a>
