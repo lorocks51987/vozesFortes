@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Award, GraduationCap, Monitor, Users } from "lucide-react";
+import { GraduationCap, Monitor, Users } from "lucide-react";
 
 export default function CoursesSection() {
     const phoneNumber = "5514998540110";
@@ -90,32 +90,7 @@ export default function CoursesSection() {
                     ))}
                 </div>
 
-                {/* Certification Section */}
-                <div className="bg-gradient-hero text-primary-foreground p-8 rounded-xl">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="flex justify-center mb-6">
-                            <Award className="w-16 h-16" />
-                        </div>
-                        <h3 className="text-2xl font-semibold mb-4">Certificação Reconhecida</h3>
-                        <p className="text-lg leading-relaxed mb-6 opacity-90">
-                            Todos os nossos cursos oferecem certificação oficial do Instituto Vozes Fortes.
-                        </p>
-                        <div className="grid md:grid-cols-3 gap-6 text-center">
-                            <div className="bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-lg">
-                                <div className="text-2xl font-bold mb-2">500+</div>
-                                <div className="text-sm opacity-90">Profissionais Certificados</div>
-                            </div>
-                            <div className="bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-lg">
-                                <div className="text-2xl font-bold mb-2">95%</div>
-                                <div className="text-sm opacity-90">Taxa de Satisfação</div>
-                            </div>
-                            <div className="bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-lg">
-                                <div className="text-2xl font-bold mb-2">3</div>
-                                <div className="text-sm opacity-90">Modalidades de Ensino</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
     );
