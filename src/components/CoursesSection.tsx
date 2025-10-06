@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { GraduationCap, Monitor, Users } from "lucide-react";
 
 export default function CoursesSection() {
-    const phoneNumber = "5514998540110";
+    const phoneNumber = "5514997335195";
     const courses = [
         {
             icon: GraduationCap,
