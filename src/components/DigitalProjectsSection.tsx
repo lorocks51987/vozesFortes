@@ -10,24 +10,82 @@ export default function DigitalProjectsSection() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { VITE_SHEETDB_URL, VITE_SHEETDB_BASIC_USER, VITE_SHEETDB_BASIC_PASS } = import.meta.env;
+    const sheetDbUrl = VITE_SHEETDB_URL;
+    const sheetDbBasicUser = VITE_SHEETDB_BASIC_USER;
+    const sheetDbBasicPass = VITE_SHEETDB_BASIC_PASS;
     const { toast } = useToast();
 
     const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        try {
+            if (!sheetDbUrl) {
+                throw new Error("SheetDB URL ausente. Defina VITE_SHEETDB_URL no .env");
+            }
 
-        toast({
-            title: "Obrigado pelo seu interesse!",
-            description: "Recebemos seus dados. Você receberá novidades sobre o lançamento do app.",
-        });
+            // Usar exatamente as colunas informadas: NOME, TELEFONE, EMAIL
+            const row = {
+                NOME: fullName,
+                TELEFONE: phone,
+                EMAIL: email,
+            } as const;
 
-        setFullName("");
-        setPhone("");
-        setEmail("");
-        setIsSubmitting(false);
+            const payloadPrimary = { data: [row] };
+
+            if (!sheetDbBasicUser || !sheetDbBasicPass) {
+                throw new Error("Credenciais Basic ausentes. Defina VITE_SHEETDB_BASIC_USER e VITE_SHEETDB_BASIC_PASS no .env");
+            }
+
+            const headers: Record<string, string> = {
+                "Content-Type": "application/json",
+                "Authorization": `Basic ${btoa(`${sheetDbBasicUser}:${sheetDbBasicPass}`)}`,
+            };
+
+            let response = await fetch(sheetDbUrl, {
+                method: "POST",
+                headers,
+                body: JSON.stringify(payloadPrimary),
+            });
+
+            // Alguns workspaces podem estar configurados para aceitar o corpo direto sem wrapper "data".
+            if (!response.ok) {
+                try {
+                    const text = await response.text();
+                    if (response.status === 400 && text && text.includes("Bad data format")) {
+                        // Tenta novamente com o objeto direto
+                        response = await fetch(sheetDbUrl, {
+                            method: "POST",
+                            headers,
+                            body: JSON.stringify(row),
+                        });
+                    }
+                } catch {
+                    // ignore parse errors
+                }
+            }
+
+            if (!response.ok) {
+                throw new Error(`Falha ao salvar no SheetDB (${response.status})`);
+            }
+
+            toast({
+                title: "Obrigado pelo seu interesse!",
+                description: "Recebemos seus dados. Você receberá novidades sobre o lançamento do app.",
+            });
+
+            setFullName("");
+            setPhone("");
+            setEmail("");
+        } catch (err) {
+            toast({
+                title: "Não foi possível enviar agora",
+                description: "Tente novamente em instantes. Se persistir, entre em contato por WhatsApp.",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const features = [
