@@ -6,6 +6,8 @@ import { BookOpen, Brain, Mail, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalProjectsSection() {
+    const [fullName, setFullName] = useState("");
+    const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { toast } = useToast();
@@ -19,9 +21,11 @@ export default function DigitalProjectsSection() {
 
         toast({
             title: "Obrigado pelo seu interesse!",
-            description: "Você receberá todas as novidades sobre o lançamento do nosso app.",
+            description: "Recebemos seus dados. Você receberá novidades sobre o lançamento do app.",
         });
 
+        setFullName("");
+        setPhone("");
         setEmail("");
         setIsSubmitting(false);
     };
@@ -65,9 +69,9 @@ export default function DigitalProjectsSection() {
                                     <img
                                         src={appPreview}
                                         alt="Preview do aplicativo Vozes Fortes"
-                                        className="w-full max-w-full h-auto mx-auto rounded-2xl shadow-glow"
+                                        className="w-full max-w-full h-auto mx-auto rounded-2xl"
                                     />
-                                    <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                                    <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md">
                                         Em Breve
                                     </div>
                                 </div>
@@ -115,11 +119,27 @@ export default function DigitalProjectsSection() {
                                 </h4>
                             </div>
                             <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-                                Cadastre seu e-mail e receba notificações exclusivas sobre o lançamento
+                                Cadastre seus dados e receba notificações exclusivas sobre o lançamento
                                 do aplicativo e novidades do Instituto Vozes Fortes.
                             </p>
 
                             <form onSubmit={handleEmailSubmit} className="space-y-4">
+                                <Input
+                                    type="text"
+                                    placeholder="Nome completo"
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)}
+                                    required
+                                    className="h-12"
+                                />
+                                <Input
+                                    type="tel"
+                                    placeholder="Telefone (WhatsApp)"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    required
+                                    className="h-12"
+                                />
                                 <Input
                                     type="email"
                                     placeholder="Seu melhor e-mail"
