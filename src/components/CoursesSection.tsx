@@ -33,9 +33,10 @@ export default function CoursesSection() {
         }
     ];
 
-    const buildWhatsAppLink = (text: string) => {
+    const buildWhatsAppLink = (text: string, source: string) => {
         const encoded = encodeURIComponent(text);
-        return `https://wa.me/${phoneNumber}?text=${encoded}`;
+        const utm = encodeURIComponent(`utm_source=site&utm_medium=cta&utm_campaign=cursos&utm_content=${source}`);
+        return `https://wa.me/${phoneNumber}?text=${encoded}%20%5B${utm}%5D`;
     };
 
     return (
@@ -50,36 +51,36 @@ export default function CoursesSection() {
                     </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 px-4 md:px-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-12 px-2 sm:px-4 md:px-0">
                     {courses.map((course, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-card p-6 sm:p-7 md:p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border"
+                            className="bg-gradient-card p-5 sm:p-7 md:p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border flex flex-col h-full"
                         >
                             <div className="mb-6">
-                                <course.icon className="w-12 h-12 text-primary mx-auto" />
+                                <course.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto" />
                             </div>
-                            <h3 className="text-xl font-semibold text-primary-dark mb-4 text-center min-h-[3rem]">
+                            <h3 className="text-lg sm:text-xl font-semibold text-primary-dark mb-3 sm:mb-4 text-center min-h-[3.25rem] sm:min-h-[3.5rem]">
                                 {course.title}
                             </h3>
-                            <p className="text-muted-foreground text-center leading-relaxed mb-6">
+                            <p className="text-sm sm:text-base text-muted-foreground text-center leading-relaxed mb-5 sm:mb-6">
                                 {course.description}
                             </p>
 
-                            <div className="space-y-3 mb-6">
-                                <div className="flex items-center justify-between py-2 px-4 bg-primary/5 rounded-lg">
+                            <div className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6">
+                                <div className="flex items-center justify-between py-2 px-3 sm:px-4 bg-primary/5 rounded-lg">
                                     <span className="text-sm font-medium text-primary-dark">Duração:</span>
                                     <span className="text-sm text-primary font-semibold">{course.duration}</span>
                                 </div>
-                                <div className="flex items-center justify-between py-2 px-4 bg-primary/5 rounded-lg">
+                                <div className="flex items-center justify-between py-2 px-3 sm:px-4 bg-primary/5 rounded-lg">
                                     <span className="text-sm font-medium text-primary-dark">Formato:</span>
                                     <span className="text-sm text-primary font-semibold">{course.format}</span>
                                 </div>
                             </div>
 
-                            <Button asChild variant="cta" size="lg" className="w-full">
+                            <Button asChild variant="cta" size="lg" className="w-full mt-auto">
                                 <a
-                                    href={buildWhatsAppLink(course.message)}
+                                    href={buildWhatsAppLink(course.message, course.title)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

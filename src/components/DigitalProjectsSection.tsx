@@ -10,6 +10,11 @@ export default function DigitalProjectsSection() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [nameError, setNameError] = useState<string>("");
+    const [phoneError, setPhoneError] = useState<string>("");
+    const [emailError, setEmailError] = useState<string>("");
+    const [formStatus, setFormStatus] = useState<"" | "success" | "error">("");
+    const [honeypot, setHoneypot] = useState<string>("");
 
     // Função para aplicar máscara de telefone
     const formatPhone = (value: string) => {
@@ -32,6 +37,9 @@ export default function DigitalProjectsSection() {
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const formatted = formatPhone(e.target.value);
         setPhone(formatted);
+        // Validação simples: considerar válidos 10-11 dígitos
+        const digits = formatted.replace(/\D/g, "");
+        setPhoneError(digits.length >= 10 && digits.length <= 11 ? "" : "Informe um telefone válido");
     };
 
     // Função para formatar nome (apenas letras e espaços)
@@ -40,6 +48,11 @@ export default function DigitalProjectsSection() {
         // Remove números e caracteres especiais, mantém apenas letras e espaços
         const formatted = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
         setFullName(formatted);
+        setNameError(formatted.trim().length >= 3 ? "" : "Informe seu nome completo");
+    };
+    const validateEmail = (value: string) => {
+        const re = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+        return re.test(value);
     };
     const { VITE_SHEETDB_URL, VITE_SHEETDB_BASIC_USER, VITE_SHEETDB_BASIC_PASS } = import.meta.env;
     const sheetDbUrl = VITE_SHEETDB_URL;
@@ -49,6 +62,21 @@ export default function DigitalProjectsSection() {
 
     const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (honeypot) {
+            return; // provável bot
+        }
+        // Validação final antes do envio
+        const nameOk = fullName.trim().length >= 3;
+        const digits = phone.replace(/\D/g, "");
+        const phoneOk = digits.length >= 10 && digits.length <= 11;
+        const emailOk = validateEmail(email);
+        setNameError(nameOk ? "" : "Informe seu nome completo");
+        setPhoneError(phoneOk ? "" : "Informe um telefone válido");
+        setEmailError(emailOk ? "" : "Informe um e-mail válido");
+        if (!nameOk || !phoneOk || !emailOk) {
+            setFormStatus("error");
+            return;
+        }
         setIsSubmitting(true);
 
         try {
@@ -109,11 +137,16 @@ export default function DigitalProjectsSection() {
             setFullName("");
             setPhone("");
             setEmail("");
+            setFormStatus("success");
+            setNameError("");
+            setPhoneError("");
+            setEmailError("");
         } catch (err) {
             toast({
                 title: "Não foi possível enviar agora",
                 description: "Tente novamente em instantes. Se persistir, entre em contato por WhatsApp.",
             });
+            setFormStatus("error");
         } finally {
             setIsSubmitting(false);
         }
@@ -199,7 +232,8 @@ export default function DigitalProjectsSection() {
                             </div>
                         </div>
 
-                        {/* Email Capture Form */}
+                        {/* Email Capture Form */
+                        }
                         <div className="bg-gradient-card p-8 rounded-xl shadow-card">
                             <div className="flex items-center gap-3 mb-6">
                                 <Mail className="w-8 h-8 text-primary" />
@@ -212,31 +246,91 @@ export default function DigitalProjectsSection() {
                                 do aplicativo e novidades do Instituto Vozes Fortes.
                             </p>
 
-                            <form onSubmit={handleEmailSubmit} className="space-y-4">
-                                <Input
+                            <form onSubmit={handleEmailSubmit} className="space-y-4" aria-live="polite">
+                                {/* Honeypot */}
+                                <input
                                     type="text"
-                                    placeholder="Nome completo"
-                                    value={fullName}
-                                    onChange={handleNameChange}
-                                    required
-                                    className="h-12"
+                                    className="hidden"
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    value={honeypot}
+                                    onChange={(e) => setHoneypot(e.target.value)}
+                                    aria-hidden="true"
                                 />
-                                <Input
-                                    type="tel"
-                                    placeholder="Telefone (WhatsApp) - (11) 99999-9999"
-                                    value={phone}
-                                    onChange={handlePhoneChange}
-                                    required
-                                    className="h-12"
-                                />
-                                <Input
-                                    type="email"
-                                    placeholder="Seu melhor e-mail"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                    className="h-12"
-                                />
+
+                                {/* Nome */}
+                                <div className="relative">
+                                    <Input
+                                        type="text"
+                                        placeholder=" "
+                                        value={fullName}
+                                        onChange={handleNameChange}
+                                        required
+                                        autoComplete="name"
+                                        name="name"
+                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                    />
+                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
+                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
+                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
+                                        Nome completo
+                                    </label>
+                                    {nameError && (
+                                        <p className="mt-1 text-xs text-red-600" role="alert">{nameError}</p>
+                                    )}
+                                </div>
+
+                                {/* Telefone */}
+                                <div className="relative">
+                                    <Input
+                                        type="tel"
+                                        placeholder=" "
+                                        value={phone}
+                                        onChange={handlePhoneChange}
+                                        required
+                                        autoComplete="tel"
+                                        name="tel"
+                                        inputMode="tel"
+                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                    />
+                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
+                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
+                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
+                                        Telefone (WhatsApp)
+                                    </label>
+                                    {phoneError && (
+                                        <p className="mt-1 text-xs text-red-600" role="alert">{phoneError}</p>
+                                    )}
+                                </div>
+
+                                {/* E-mail */}
+                                <div className="relative">
+                                    <Input
+                                        type="email"
+                                        placeholder=" "
+                                        value={email}
+                                        onChange={(e) => {
+                                            setEmail(e.target.value);
+                                            setEmailError(validateEmail(e.target.value) ? "" : "Informe um e-mail válido");
+                                        }}
+                                        required
+                                        autoComplete="email"
+                                        name="email"
+                                        inputMode="email"
+                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                    />
+                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
+                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
+                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
+                                        Seu melhor e-mail
+                                    </label>
+                                    {emailError && (
+                                        <p className="mt-1 text-xs text-red-600" role="alert">{emailError}</p>
+                                    )}
+                                </div>
                                 <Button
                                     type="submit"
                                     variant="hero"
@@ -247,6 +341,18 @@ export default function DigitalProjectsSection() {
                                     {isSubmitting ? "Cadastrando..." : "Quero Ser Notificado"}
                                 </Button>
                             </form>
+
+                            {/* Feedback adicional acessível */}
+                            {formStatus === "success" && (
+                                <div className="mt-4 text-sm text-green-700 bg-green-50 border border-green-200 rounded-md p-3" role="status" aria-live="polite">
+                                    Inscrição recebida com sucesso. Em breve você receberá novidades.
+                                </div>
+                            )}
+                            {formStatus === "error" && (nameError || phoneError || emailError) && (
+                                <div className="mt-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded-md p-3" role="alert" aria-live="assertive">
+                                    Corrija os campos destacados para continuar.
+                                </div>
+                            )}
 
                             <p className="text-xs text-muted-foreground text-center mt-4">
                                 Respeitamos sua privacidade. Nenhum spam, apenas conteúdo relevante.
