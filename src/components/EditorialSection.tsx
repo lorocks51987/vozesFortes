@@ -94,12 +94,13 @@ export default function EditorialSection() {
                         </Button>
 
                         <Button
-                            variant="cta"
+                            variant="outline"
                             size="lg"
-                            className="w-full mt-auto"
-                            onClick={() => window.open('https://open.spotify.com/episode/5oBxnjG7DY8IxRMdsaErxn?si=75Ja59mbQ4KX9ofMG2IqIA', '_blank')}
+                            className="w-full mt-auto border-primary/20 text-muted-foreground hover:bg-primary/5 hover:text-primary cursor-not-allowed opacity-60"
+                            disabled
                         >
-                            Ouvir Episódios
+                            <Mic className="w-4 h-4 mr-2" />
+                            Podcast - Em breve
                         </Button>
                     </div>
 
@@ -134,9 +135,11 @@ export default function EditorialSection() {
                                 Destaque: "Tempestade Interior"
                             </h4>
                             <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
-                                Por Mônica Casagrande Neto. Uma obra profunda que explora as nuances da
-                                dependência química e os caminhos para a recuperação, baseada em experiências
-                                reais e conhecimento terapêutico.
+                                "Esta obra nasce da urgência de compartilhar uma jornada real de transformação.
+                                É uma narrativa que atravessa os abismos da dependência química e emerge como
+                                testemunho de que a recuperação é possível. Cada palavra aqui contada carrega
+                                o peso da verdade e a leveza da esperança, oferecendo não apenas uma história,
+                                mas um caminho possível para quem busca sua própria redenção."
                             </p>
                             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs sm:text-sm text-muted-foreground">
                                 <span>📖 Disponível em versão impressa</span>

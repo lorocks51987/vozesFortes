@@ -11,7 +11,7 @@ export default function CoursesSection() {
             duration: "8 horas",
             format: "Presencial, Híbrido ou Online",
             message:
-                "Olá! Tenho interesse no Treinamento Intensivo (8h) – Dependência Química e Prevenção. Poderia me enviar mais informações?"
+                "Olá! Tenho interesse no Treinamento Intensivo (8h) – Dependência Química e Prevenção. Gostaria de saber valores, próximas turmas e como me inscrever."
         },
         {
             icon: Users,
@@ -20,7 +20,7 @@ export default function CoursesSection() {
             duration: "Carga horária variável",
             format: "Presencial ou Híbrido",
             message:
-                "Olá! Tenho interesse na Capacitação de Monitores e Conselheiros. Poderia me enviar detalhes e valores?"
+                "Olá! Tenho interesse na Capacitação de Monitores e Conselheiros. Gostaria de saber valores, próximas turmas e como me inscrever."
         },
         {
             icon: Monitor,
@@ -29,7 +29,7 @@ export default function CoursesSection() {
             duration: "8–16 horas",
             format: "Presencial ou Online",
             message:
-                "Olá! Tenho interesse nos Workshops Corporativos sobre álcool, drogas e saúde mental no trabalho. Pode compartilhar proposta e disponibilidade?"
+                "Olá! Tenho interesse nos Workshops Corporativos sobre álcool, drogas e saúde mental no trabalho. Gostaria de saber valores, disponibilidade e como contratar."
         }
     ];
 
@@ -83,7 +83,10 @@ export default function CoursesSection() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Saiba Mais
+                                    {course.title.includes('Workshops Corporativos')
+                                        ? 'Saiba Mais - Valores e Disponibilidade'
+                                        : 'Saiba Mais - Valores e Próximas Turmas'
+                                    }
                                 </a>
                             </Button>
                         </div>

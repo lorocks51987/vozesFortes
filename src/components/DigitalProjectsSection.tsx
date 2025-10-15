@@ -10,6 +10,37 @@ export default function DigitalProjectsSection() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Função para aplicar máscara de telefone
+    const formatPhone = (value: string) => {
+        // Remove todos os caracteres não numéricos
+        const numbers = value.replace(/\D/g, '');
+
+        // Aplica a máscara baseada no tamanho
+        if (numbers.length <= 2) {
+            return `(${numbers}`;
+        } else if (numbers.length <= 7) {
+            return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+        } else if (numbers.length <= 11) {
+            return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+        } else {
+            // Limita a 11 dígitos
+            return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+        }
+    };
+
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const formatted = formatPhone(e.target.value);
+        setPhone(formatted);
+    };
+
+    // Função para formatar nome (apenas letras e espaços)
+    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        // Remove números e caracteres especiais, mantém apenas letras e espaços
+        const formatted = value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+        setFullName(formatted);
+    };
     const { VITE_SHEETDB_URL, VITE_SHEETDB_BASIC_USER, VITE_SHEETDB_BASIC_PASS } = import.meta.env;
     const sheetDbUrl = VITE_SHEETDB_URL;
     const sheetDbBasicUser = VITE_SHEETDB_BASIC_USER;
@@ -186,15 +217,15 @@ export default function DigitalProjectsSection() {
                                     type="text"
                                     placeholder="Nome completo"
                                     value={fullName}
-                                    onChange={(e) => setFullName(e.target.value)}
+                                    onChange={handleNameChange}
                                     required
                                     className="h-12"
                                 />
                                 <Input
                                     type="tel"
-                                    placeholder="Telefone (WhatsApp)"
+                                    placeholder="Telefone (WhatsApp) - (11) 99999-9999"
                                     value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    onChange={handlePhoneChange}
                                     required
                                     className="h-12"
                                 />

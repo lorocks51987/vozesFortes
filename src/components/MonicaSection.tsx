@@ -25,11 +25,6 @@ export default function MonicaSection() {
                                 empática e profissional, ela desenvolveu métodos únicos de acolhimento e recuperação.
                             </p>
 
-                            <p className="text-muted-foreground leading-relaxed">
-                                Sob o pseudônimo literário <em className="text-primary font-medium">Nox Persefhone</em>,
-                                ela também explora temas profundos da condição humana através da literatura,
-                                oferecendo perspectivas únicas sobre transformação e renascimento.
-                            </p>
 
                             <div className="bg-gradient-card p-6 rounded-xl">
                                 <blockquote className="text-primary-dark font-medium italic text-center">
