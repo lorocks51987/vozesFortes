@@ -132,6 +132,12 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
   }
+
+  /* Foco visível consistente para links, botões e inputs */
+  :is(a, button, [role="button"], input, textarea, select):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.3), 0 0 0 6px hsl(var(--ring) / 0.15);
+  }
 }
 
 @layer utilities {
@@ -203,5 +209,41 @@ All colors MUST be HSL.
   
   .hover-scale:hover {
     transform: scale(1.02);
+  }
+}
+
+/* Responsividade e UX globais */
+@layer utilities {
+  .anchor-offset {
+    scroll-margin-top: 5rem; /* evita esconder âncoras sob cabeçalhos fixos */
+  }
+
+  /* Animações de entrada elegantes */
+  @keyframes vf-fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes vf-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes vf-scale-in {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-up { animation: vf-fade-up .6s cubic-bezier(0.4, 0, 0.2, 1) both; }
+  .animate-fade-in { animation: vf-fade-in .6s cubic-bezier(0.4, 0, 0.2, 1) both; }
+  .animate-scale-in { animation: vf-scale-in .5s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+  /* Estado inicial para revelar on-scroll */
+  .reveal { opacity: 0; transform: translateY(12px); will-change: opacity, transform; }
+}
+
+/* Reduz animações quando o usuário prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

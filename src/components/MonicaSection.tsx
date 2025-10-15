@@ -38,7 +38,7 @@ export default function MonicaSection() {
                         </div>
 
                         <div className="bg-gradient-card p-8 rounded-xl shadow-card">
-                            <img src={monicaImg} alt="Mônica Casagrande Neto" className="w-full h-72 md:h-80 object-contain rounded-md mb-6" />
+                            <img src={monicaImg} alt="Mônica Casagrande Neto" className="w-full h-72 md:h-80 object-contain rounded-md mb-6" loading="lazy" width={640} height={320} />
                             <h3 className="text-xl font-semibold text-primary-dark mb-6">
                                 Áreas de Especialização
                             </h3>

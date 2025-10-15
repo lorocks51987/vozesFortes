@@ -29,6 +29,9 @@ export default function HeroSection() {
                         src={logo}
                         alt="Vozes Fortes - VF Logo"
                         className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 hover-scale transition-smooth"
+                        loading="lazy"
+                        width={192}
+                        height={192}
                     />
                 </div>
 
@@ -38,6 +41,9 @@ export default function HeroSection() {
                         src={escritaImg}
                         alt="Vozes Fortes"
                         className="w-full max-w-xs sm:max-w-md md:max-w-2xl h-auto px-4"
+                        loading="lazy"
+                        width={1024}
+                        height={256}
                     />
                 </div>
 

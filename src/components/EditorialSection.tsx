@@ -9,7 +9,7 @@ export default function EditorialSection() {
     const [isLiteratureExpanded, setIsLiteratureExpanded] = useState(false);
 
     return (
-        <section id="producao-editorial" className="py-20 bg-gradient-section">
+        <section id="producao-editorial" className="py-20 bg-gradient-section anchor-offset">
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-section text-primary-dark mb-6">
@@ -20,7 +20,7 @@ export default function EditorialSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 reveal reveal-stagger">
                     {/* Podcast Section */}
                     <div className="bg-gradient-card p-3 sm:p-4 md:p-6 lg:p-8 rounded-xl shadow-card hover-lift transition-smooth flex flex-col h-full w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:max-w-none lg:mx-0">
                         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -35,6 +35,9 @@ export default function EditorialSection() {
                             src={podcastImg}
                             alt="Podcast Milagre Invisível"
                             className="w-full max-w-full h-auto object-contain rounded-lg mb-3 sm:mb-4 max-h-48 sm:max-h-56 md:max-h-64"
+                            loading="lazy"
+                            width={640}
+                            height={256}
                         />
 
                         <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-3 sm:mb-4 md:mb-6">
@@ -118,6 +121,9 @@ export default function EditorialSection() {
                             src={livroImg}
                             alt="Literatura Vozes Fortes"
                             className="w-full max-w-full h-auto object-contain rounded-lg mb-3 sm:mb-4 md:mb-6 max-h-48 sm:max-h-56 md:max-h-64"
+                            loading="lazy"
+                            width={640}
+                            height={256}
                         />
 
                         <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-3 sm:mb-4 md:mb-6">

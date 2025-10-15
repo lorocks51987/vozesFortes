@@ -21,7 +21,7 @@ export default function ConsciousnessSection() {
     ];
 
     return (
-        <section id="da-pele-para-dentro" className="py-20 bg-gradient-hero text-primary-foreground">
+        <section id="da-pele-para-dentro" className="py-20 bg-gradient-hero text-primary-foreground anchor-offset">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <div className="relative mb-0 flex items-center justify-center min-h-[8rem] md:h-64 px-4">
@@ -43,7 +43,7 @@ export default function ConsciousnessSection() {
                     </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 px-4 md:px-0">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 px-4 md:px-0 reveal reveal-stagger">
                     {initiatives.map((initiative, index) => (
                         <div
                             key={index}

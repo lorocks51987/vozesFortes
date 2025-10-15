@@ -171,7 +171,7 @@ export default function DigitalProjectsSection() {
     ];
 
     return (
-        <section id="projetos-digitais" className="py-20 bg-gradient-section">
+        <section id="projetos-digitais" className="py-20 bg-gradient-section anchor-offset">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-section text-primary-dark mb-6">
@@ -182,7 +182,7 @@ export default function DigitalProjectsSection() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 items-center reveal">
                     {/* App Preview */}
                     <div className="relative">
                         <div className="bg-gradient-hero p-8 rounded-2xl shadow-elegant overflow-hidden">

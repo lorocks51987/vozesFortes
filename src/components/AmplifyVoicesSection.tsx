@@ -94,7 +94,7 @@ export default function AmplifyVoicesSection() {
     };
 
     return (
-        <section id="amplifique-essas-vozes" className="py-20 bg-background">
+        <section id="amplifique-essas-vozes" className="py-20 bg-background anchor-offset">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-section text-primary-dark mb-4">Amplifique essas Vozes</h2>
@@ -103,7 +103,7 @@ export default function AmplifyVoicesSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 reveal reveal-stagger">
                     {cards.map((card, idx) => (
                         <div key={idx} className="bg-gradient-card p-6 sm:p-7 md:p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border flex flex-col h-full">
                             <div className="mb-6">

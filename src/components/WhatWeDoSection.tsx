@@ -26,7 +26,7 @@ export default function WhatWeDoSection() {
     ];
 
     return (
-        <section id="o-que-fazemos" className="py-20 bg-gradient-section">
+        <section id="o-que-fazemos" className="py-20 bg-gradient-section anchor-offset">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <div className="relative mb-6 flex items-center justify-center h-28 sm:h-32 md:h-40 px-4">
@@ -37,6 +37,9 @@ export default function WhatWeDoSection() {
                             src={espacoVozImg}
                             alt="Damos Espaço à Sua Voz"
                             className="absolute right-1 sm:-right-6 md:-right-24 bottom-2 sm:bottom-3 md:bottom-0 w-20 h-20 sm:w-32 sm:h-32 md:w-64 md:h-64 translate-y-0 sm:translate-y-2 md:translate-y-8 object-contain pointer-events-none select-none"
+                            loading="lazy"
+                            width={256}
+                            height={256}
                         />
                     </div>
                     <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-8 px-4">
@@ -44,7 +47,7 @@ export default function WhatWeDoSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal reveal-stagger">
                     {services.map((service, index) => (
                         <div
                             key={index}

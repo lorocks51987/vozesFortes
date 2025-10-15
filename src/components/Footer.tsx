@@ -11,7 +11,7 @@ export default function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-4 mb-6">
-                            <img src={logo} alt="Vozes Fortes" className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded" />
+                            <img src={logo} alt="Vozes Fortes" className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded" loading="lazy" width={96} height={96} />
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-bold">Vozes Fortes</h3>
                                 <p className="text-primary-foreground/80">Instituto de Transformação</p>
