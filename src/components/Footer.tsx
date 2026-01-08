@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import { buildWhatsAppLink } from "@/lib/utils";
 import { Heart, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -56,7 +57,7 @@ export default function Footer() {
                             <div className="flex items-center gap-3">
                                 <Phone className="w-4 h-4 text-primary-foreground/60" />
                                 <a
-                                    href="https://wa.me/5514997335195"
+                                    href={buildWhatsAppLink("Olá, vim pelo site e gostaria de falar com alguém.")}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-primary-foreground/80 text-sm hover:text-primary-foreground transition-colors"

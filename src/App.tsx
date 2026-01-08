@@ -1,3 +1,4 @@
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,6 +6,7 @@ import { initRevealOnScroll } from "@/lib/reveal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +23,8 @@ const App = () => {
                 <Toaster />
                 <Sonner />
                 <BrowserRouter>
+                    <ScrollProgress />
+                    <Navbar />
                     <Routes>
                         <Route path="/" element={<Index />} />
                         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

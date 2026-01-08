@@ -192,6 +192,8 @@ export default function DigitalProjectsSection() {
                                         src={appPreview}
                                         alt="Preview do aplicativo Vozes Fortes"
                                         className="w-full max-w-full h-auto mx-auto rounded-2xl"
+                                        width={300}
+                                        height={600}
                                     />
                                     <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md">
                                         Em Breve
@@ -256,6 +258,7 @@ export default function DigitalProjectsSection() {
                                     value={honeypot}
                                     onChange={(e) => setHoneypot(e.target.value)}
                                     aria-hidden="true"
+                                    id="honeypot"
                                 />
 
                                 {/* Nome */}
@@ -268,9 +271,12 @@ export default function DigitalProjectsSection() {
                                         required
                                         autoComplete="name"
                                         name="name"
+                                        id="name"
                                         className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                    <label
+                                        htmlFor="name"
+                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
                                         peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
                                         peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
                                         peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
@@ -291,10 +297,13 @@ export default function DigitalProjectsSection() {
                                         required
                                         autoComplete="tel"
                                         name="tel"
+                                        id="phone"
                                         inputMode="tel"
                                         className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                    <label
+                                        htmlFor="phone"
+                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
                                         peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
                                         peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
                                         peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
@@ -318,10 +327,13 @@ export default function DigitalProjectsSection() {
                                         required
                                         autoComplete="email"
                                         name="email"
+                                        id="email"
                                         inputMode="email"
                                         className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
+                                    <label
+                                        htmlFor="email"
+                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
                                         peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
                                         peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
                                         peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">

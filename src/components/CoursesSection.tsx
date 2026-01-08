@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { buildWhatsAppLink } from "@/lib/utils";
 import { GraduationCap, Monitor, Users } from "lucide-react";
 
 export default function CoursesSection() {
-    const phoneNumber = "5514997335195";
     const courses = [
         {
             icon: GraduationCap,
@@ -15,29 +15,23 @@ export default function CoursesSection() {
         },
         {
             icon: Users,
-            title: "Capacitação de Monitores e Conselheiros",
+            title: "Formação para Terapeutas",
             description: "Formação para atuação no acompanhamento e suporte a pessoas em recuperação.",
             duration: "Carga horária variável",
             format: "Presencial ou Híbrido",
             message:
-                "Olá! Tenho interesse na Capacitação de Monitores e Conselheiros. Gostaria de saber valores, próximas turmas e como me inscrever."
+                "Olá! Tenho interesse na Formação para Terapeutas. Gostaria de saber valores, próximas turmas e como me inscrever."
         },
         {
             icon: Monitor,
             title: "Workshops Corporativos",
             description: "Álcool, drogas e saúde mental no trabalho, com foco em prevenção e acolhimento.",
             duration: "8–16 horas",
-            format: "Presencial ou Online",
+            format: "Online",
             message:
                 "Olá! Tenho interesse nos Workshops Corporativos sobre álcool, drogas e saúde mental no trabalho. Gostaria de saber valores, disponibilidade e como contratar."
         }
     ];
-
-    const buildWhatsAppLink = (text: string, source: string) => {
-        const encoded = encodeURIComponent(text);
-        const utm = encodeURIComponent(`utm_source=site&utm_medium=cta&utm_campaign=cursos&utm_content=${source}`);
-        return `https://wa.me/${phoneNumber}?text=${encoded}%20%5B${utm}%5D`;
-    };
 
     return (
         <section id="cursos-treinamentos" className="py-20 bg-background anchor-offset">

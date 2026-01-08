@@ -9,7 +9,7 @@ export default function EditorialSection() {
     const [isLiteratureExpanded, setIsLiteratureExpanded] = useState(false);
 
     return (
-        <section id="producao-editorial" className="py-20 bg-gradient-section anchor-offset">
+        <section id="producao-editorial" className="py-12 sm:py-20 bg-gradient-section anchor-offset">
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-section text-primary-dark mb-6">

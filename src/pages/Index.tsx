@@ -13,12 +13,18 @@ const Footer = lazy(() => import("@/components/Footer"));
 const Index = () => {
     return (
         <main id="main" className="min-h-screen">
-            <HeroSection />
+            <div id="hero">
+                <HeroSection />
+            </div>
             <Suspense fallback={<div className="py-10" />}>
-                <WhatWeDoSection />
+                <div id="o-que-fazemos">
+                    <WhatWeDoSection />
+                </div>
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <MonicaSection />
+                <div id="quem-somos">
+                    <MonicaSection />
+                </div>
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
                 <ConsciousnessSection />
@@ -27,16 +33,22 @@ const Index = () => {
                 <EditorialSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <CoursesSection />
+                <div id="cursos">
+                    <CoursesSection />
+                </div>
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
                 <AmplifyVoicesSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <DigitalProjectsSection />
+                <div id="projetos">
+                    <DigitalProjectsSection />
+                </div>
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <Footer />
+                <div id="contato">
+                    <Footer />
+                </div>
             </Suspense>
         </main>
     );

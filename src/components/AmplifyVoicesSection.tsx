@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { buildWhatsAppLink } from "@/lib/utils";
 import { Building2, HandHeart, Megaphone, Share2, UsersRound } from "lucide-react";
 
-const phoneNumber = "5514997335195";
 const SHARE_URL = "https://vozesfortes.com.br/";
-
-const buildWhatsAppLink = (text: string) => {
-    const encoded = encodeURIComponent(text);
-    return `https://wa.me/${phoneNumber}?text=${encoded}`;
-};
 
 type ActionCard = {
     icon: typeof HandHeart;
@@ -89,7 +84,7 @@ export default function AmplifyVoicesSection() {
             await navigator.clipboard.writeText(shareData.url);
             alert("Link copiado! Compartilhe com seus contatos.");
         } catch {
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(shareData.text + " " + shareData.url)}`);
+            window.open(buildWhatsAppLink(shareData.text + " " + shareData.url));
         }
     };
 

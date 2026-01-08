@@ -12,7 +12,7 @@ export default function MonicaSection() {
                         <div className="w-24 h-1 bg-gradient-purple mx-auto mb-8 rounded-full" />
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center flex flex-col-reverse lg:grid">
                         <div className="space-y-6">
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 <strong className="text-primary-dark">Educadora, escritora, conselheira e terapeuta</strong>,
@@ -62,6 +62,10 @@ export default function MonicaSection() {
                                 <li className="flex items-start gap-3">
                                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                                     <span className="text-muted-foreground">Produção de Conteúdo Terapêutico</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-muted-foreground">Hipnoterapia</span>
                                 </li>
                             </ul>
                         </div>
