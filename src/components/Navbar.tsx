@@ -63,9 +63,15 @@ const Navbar = () => {
                     {/* Logo */}
                     <button
                         onClick={() => scrollToSection("hero")}
-                        className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity flex items-center gap-1"
+                        className={cn(
+                            "text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity flex items-center gap-1",
+                            scrolled ? "text-foreground" : "text-white"
+                        )}
                     >
-                        Vozes<span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">Fortes</span>
+                        Vozes<span className={cn(
+                            "bg-clip-text text-transparent bg-gradient-to-r",
+                            scrolled ? "from-primary to-primary/60" : "from-white to-white/80"
+                        )}>Fortes</span>
                     </button>
 
                     {/* Desktop Navigation */}

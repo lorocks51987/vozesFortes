@@ -182,7 +182,7 @@ export default function DigitalProjectsSection() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center reveal">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* App Preview */}
                     <div className="relative">
                         <div className="bg-gradient-hero p-8 rounded-2xl shadow-elegant overflow-hidden">
@@ -262,36 +262,40 @@ export default function DigitalProjectsSection() {
                                 />
 
                                 {/* Nome */}
-                                <div className="relative">
+                                <div className="space-y-2">
+                                    <label
+                                        htmlFor="name"
+                                        className="text-sm font-medium text-primary-dark ml-1"
+                                    >
+                                        Nome completo
+                                    </label>
                                     <Input
                                         type="text"
-                                        placeholder=" "
+                                        placeholder="Digite seu nome"
                                         value={fullName}
                                         onChange={handleNameChange}
                                         required
                                         autoComplete="name"
                                         name="name"
                                         id="name"
-                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                        className="h-12 bg-white/80 border-transparent backdrop-blur-sm focus-visible:ring-primary/50 focus-visible:ring-2 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label
-                                        htmlFor="name"
-                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
-                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
-                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
-                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
-                                        Nome completo
-                                    </label>
                                     {nameError && (
-                                        <p className="mt-1 text-xs text-red-600" role="alert">{nameError}</p>
+                                        <p className="text-xs text-red-600 ml-1" role="alert">{nameError}</p>
                                     )}
                                 </div>
 
                                 {/* Telefone */}
-                                <div className="relative">
+                                <div className="space-y-2">
+                                    <label
+                                        htmlFor="phone"
+                                        className="text-sm font-medium text-primary-dark ml-1"
+                                    >
+                                        Telefone (WhatsApp)
+                                    </label>
                                     <Input
                                         type="tel"
-                                        placeholder=" "
+                                        placeholder="(00) 00000-0000"
                                         value={phone}
                                         onChange={handlePhoneChange}
                                         required
@@ -299,26 +303,24 @@ export default function DigitalProjectsSection() {
                                         name="tel"
                                         id="phone"
                                         inputMode="tel"
-                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                        className="h-12 bg-white/80 border-transparent backdrop-blur-sm focus-visible:ring-primary/50 focus-visible:ring-2 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label
-                                        htmlFor="phone"
-                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
-                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
-                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
-                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
-                                        Telefone (WhatsApp)
-                                    </label>
                                     {phoneError && (
-                                        <p className="mt-1 text-xs text-red-600" role="alert">{phoneError}</p>
+                                        <p className="text-xs text-red-600 ml-1" role="alert">{phoneError}</p>
                                     )}
                                 </div>
 
                                 {/* E-mail */}
-                                <div className="relative">
+                                <div className="space-y-2">
+                                    <label
+                                        htmlFor="email"
+                                        className="text-sm font-medium text-primary-dark ml-1"
+                                    >
+                                        Qual é seu melhor e-mail?
+                                    </label>
                                     <Input
                                         type="email"
-                                        placeholder=" "
+                                        placeholder="exemplo@email.com"
                                         value={email}
                                         onChange={(e) => {
                                             setEmail(e.target.value);
@@ -329,18 +331,10 @@ export default function DigitalProjectsSection() {
                                         name="email"
                                         id="email"
                                         inputMode="email"
-                                        className="peer h-12 bg-white/80 border-transparent backdrop-blur-sm placeholder:text-transparent focus-visible:ring-primary/50 focus-visible:ring-4 shadow-sm hover:shadow-md transition"
+                                        className="h-12 bg-white/80 border-transparent backdrop-blur-sm focus-visible:ring-primary/50 focus-visible:ring-2 shadow-sm hover:shadow-md transition"
                                     />
-                                    <label
-                                        htmlFor="email"
-                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all pointer-events-none px-1
-                                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base
-                                        peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary-dark
-                                        peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs bg-white/80 rounded">
-                                        Seu melhor e-mail
-                                    </label>
                                     {emailError && (
-                                        <p className="mt-1 text-xs text-red-600" role="alert">{emailError}</p>
+                                        <p className="text-xs text-red-600 ml-1" role="alert">{emailError}</p>
                                     )}
                                 </div>
                                 <Button
